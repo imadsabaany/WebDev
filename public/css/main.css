@@ -1,0 +1,42 @@
+/* Site Colors:
+  #1A446C - blue grey
+  #689DC1 - light blue
+  #D4E6F4 - very light blue
+  #EEE4B9 - light tan
+  #8D0D19 - burgundy
+*/
+
+html { height: 100%; width: 100%; }
+body { height: 100%; width: 100%; margin: 0; padding: 0; border: 0; background: #FFFFFF;font: 18px/15px Verdana,Arial,Helvetica,sans-serif; }
+img { border: none; }
+table, tr, td, tr { border-collapse: collapse; vertical-align: middle; text-align: left;font: 13px/15px Verdana,Arial,Helvetica,sans-serif; }
+
+#loginForm{color:white;position:absolute;right:10px;top:13px} 
+/*#header { height: 90px;position:relative; text-align: left; background: #1A446C; color: #D4E6F4; }*/
+
+#header { height: 90px; text-align: left; background: #1A446C; color: #D4E6F4; }
+#header h1 { padding: 1em; margin: 0;}
+#header h2 {position:absolute;top:25;right:670px; margin: 0;}
+#header a { color:white; } 
+#main { min-height: 600px; width: 100%; background: #EEE4B9; padding: 0;}
+#main h3{position:absolute;top:120px;left:40%}
+#main h2{top:120px}
+#footer { height: 2em; padding: 1em; text-align: center; background: #1A446C;  color: #D4E6F4; }
+#imgRow {position:absolute;top:250px;left:300px}
+#searchText {position:absolute;left:350px;top:15px;width:300px}
+#searchButton{position:absolute;left:660px;top:15px}
+#addComment{position:absolute;right:700px;top:100px;width:100px;}
+#addComment2{position:absolute;}
+#comments{height:300px;width:1000px;overflow:auto;position:absolute;top:350;}
+#searchTable{left:5;width:900px;overflow:auto;position:absolute;}
+#searchResults{height:500px;width:1000px;overflow:auto;position:absolute;top:150;}
+#noResults {position:absolute;top:60;left:400;}
+#newCommentText {width:460px;height:100px;visibility:hidden;}
+
+.error {color:red;}
+.commentBodyTd {background-color:#F5E0EB;width:10;padding-left: 5px;padding-bottom: 3px;}
+.commentBodyText {font-size: 17px;}
+.commentDetailsTd {background-color:#EBFFEB;padding-left: 5px;padding-bottom: 10px;padding-top: 7px;}
+.commentDetailsText {font-size: 17px;}
+table.bordered tr th, table.bordered tr td { border: 1px solid #000000; }
+

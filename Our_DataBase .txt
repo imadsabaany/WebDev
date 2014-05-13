@@ -1,0 +1,47 @@
+CREATE DATABASE ebaywebdb;
+use ebaywebdb;
+#1 Users Table
+CREATE TABLE users (
+	username VARCHAR( 255 ) NOT NULL ,
+	password VARCHAR( 255 ) NOT NULL ,
+	displayName VARCHAR( 255 ) ,
+	PRIMARY KEY (username)
+	)
+;
+#2 Items Table
+CREATE TABLE items (
+	itemId BIGINT(10) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY ,
+	owner VARCHAR( 255 ) NOT NULL ,
+	itemName VARCHAR(255) NOT NULL ,
+	description TEXT NOT NULL ,
+	sellTime DATETIME NOT NULL ,
+	openingPrice DECIMAL(11,3) NOT NULL ,
+	currentBid DECIMAL(11,3) NOT NULL ,
+	maxBid DECIMAL(11,3) NOT NULL ,
+	winner VARCHAR( 255 ) ,
+	imageURL VARCHAR(2083) DEFAULT NULL,
+	FOREIGN KEY (owner) REFERENCES users(username) 
+ 
+	)
+;
+#3 Bids Table
+CREATE TABLE bids (
+	bidItem BIGINT(10) UNSIGNED NOT NULL ,
+	bidder VARCHAR( 255 ) NOT NULL ,
+	bidValue DECIMAL(11,3) NOT NULL ,
+	auctionDate DATETIME NOT NULL , 
+	FOREIGN KEY (bidder) REFERENCES users(username),
+	FOREIGN KEY (bidItem) REFERENCES items(itemId), 
+	PRIMARY KEY (bidItem,bidder)
+	)
+;
+#4 Comments Table
+CREATE TABLE comments (
+	id INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY ,
+	itemId BIGINT(10) UNSIGNED NOT NULL ,
+	created DATETIME NOT NULL ,
+	author VARCHAR ( 255 ) NOT NULL ,
+	body TEXT NOT NULL ,
+	FOREIGN KEY (author) REFERENCES users(username),
+	FOREIGN KEY (itemId) REFERENCES items(itemId) 
+	)
